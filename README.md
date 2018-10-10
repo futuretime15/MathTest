@@ -4,7 +4,7 @@ Unit Testing Exercise
 /*
 
     MathTest by MF, JRE 11
-    A basic calculator, chosen for UI simplicity with diverse methods
+    A basic calculator, chosen for diverse methods and simple UI
     
     A Maven model project imported via pox.xml
     For run configuration, for Application with Main class as Main
