@@ -1,5 +1,5 @@
 # MathTest
-Unit Testing Example
+Unit Testing Exercise
 
 /*
 
