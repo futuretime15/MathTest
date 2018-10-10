@@ -21,8 +21,8 @@ public final class MathTests {
 
     @Test
     public void TestNG() {
-        String str = "TestNG is OK";
-        assertEquals("TestNG is OK", str);
+        String str1 = "TestNG is OK";
+        assertEquals("TestNG is OK", str1);
     }
 
     @Test
