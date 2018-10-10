@@ -8,7 +8,7 @@
 
 public final class Maths {
 
-    public static Double mathsParseNum(String s, boolean blnInteger) {
+    public static Double mathsParseNum(String s, boolean blnFloat) {
         // Returns: Object as boxed Numeric, or == null if invalid
         Double myNum;
         if (s == null)
@@ -20,7 +20,7 @@ public final class Maths {
             } catch (NumberFormatException ne) {
                 return null;
             }
-            if (blnInteger == true && (myNum - Math.floor(myNum)) != 0)
+            if (blnFloat == false && (myNum - Math.floor(myNum)) != 0)
                 return null;
             else
                 return myNum;

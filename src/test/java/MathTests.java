@@ -27,42 +27,42 @@ public final class MathTests {
 
     @Test
     public void parse_IntegerIncInteger() {
-        assertEquals(myMaths.mathsParseNum("1.0", true), 1.0);
-    }
-
-    @Test
-    public void parse_FloatIncInteger() {
         assertEquals(myMaths.mathsParseNum("1.0", false), 1.0);
     }
 
     @Test
+    public void parse_FloatIncInteger() {
+        assertEquals(myMaths.mathsParseNum("1.0", true), 1.0);
+    }
+
+    @Test
     public void parse_FloatIncFloat() {
-        assertEquals(myMaths.mathsParseNum("1.1", false), 1.1);
+        assertEquals(myMaths.mathsParseNum("1.1", true), 1.1);
     }
 
     @Test
     public void parse_FloatExcInteger() {
-        assertEquals(myMaths.mathsParseNum("1.1", true), null);
+        assertEquals(myMaths.mathsParseNum("1.1", false), null);
     }
 
     @Test
     public void parse_IntegerExcString() {
-        assertEquals(myMaths.mathsParseNum("X", true), null);
-    }
-
-    @Test
-    public void parse_FloatExcString() {
         assertEquals(myMaths.mathsParseNum("X", false), null);
     }
 
     @Test
+    public void parse_FloatExcString() {
+        assertEquals(myMaths.mathsParseNum("X", true), null);
+    }
+
+    @Test
     public void parse_IntegerExcNull() {
-        assertEquals(myMaths.mathsParseNum(null, true), null);
+        assertEquals(myMaths.mathsParseNum(null, false), null);
     }
 
     @Test
     public void parse_FloatExcNull() {
-        assertEquals(myMaths.mathsParseNum(null, false), null);
+        assertEquals(myMaths.mathsParseNum(null, true), null);
     }
 
     @Test

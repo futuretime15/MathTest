@@ -14,7 +14,7 @@ public class Main {
         boolean myIsQuit;
         Double myUserChoice;
         do {
-            myUserChoice = mainGetNum("1 Add, 2 Subtract, 3 Multiply, 4 Divide, 9 Exit. Which?", true);
+            myUserChoice = mainGetNum("1 Add, 2 Subtract, 3 Multiply, 4 Divide, 9 Exit. Which?", false);
             myIsQuit = (myUserChoice == 9);
             if (!myIsQuit)
                 mainCalc(myUserChoice);
@@ -27,16 +27,16 @@ public class Main {
         Double myCalc;
         switch (dblChoice.intValue()) {
             case 1:
-                myCalc = myMaths.mathsAdd(mainGetNum("1st?", false), mainGetNum("2nd?", false));
+                myCalc = myMaths.mathsAdd(mainGetNum("1st?", true), mainGetNum("2nd?", true));
                 break;
             case 2:
-                myCalc = myMaths.mathsSubtract(mainGetNum("1st?", false), mainGetNum("2nd?", false));
+                myCalc = myMaths.mathsSubtract(mainGetNum("1st?", true), mainGetNum("2nd?", true));
                 break;
             case 3:
-                myCalc = myMaths.mathsMultiply(mainGetNum("1st?", false), mainGetNum("2nd?", false));
+                myCalc = myMaths.mathsMultiply(mainGetNum("1st?", true), mainGetNum("2nd?", true));
                 break;
             case 4:
-                myCalc = myMaths.mathsDivide(mainGetNum("1st?", false), mainGetNum("2nd?", false));
+                myCalc = myMaths.mathsDivide(mainGetNum("1st?", true), mainGetNum("2nd?", true));
                 break;
             default:
                 System.out.println("That's not a valid option.");
@@ -46,7 +46,7 @@ public class Main {
             System.out.println("= " + myCalc);
     }
 
-    public static Double mainGetNum(String s, boolean blnInteger) {
+    public static Double mainGetNum(String s, boolean blnFloat) {
         Maths myMaths = new Maths();
         Scanner in = new Scanner(System.in);
         Double myNum;
@@ -54,7 +54,7 @@ public class Main {
         while(true) {
             System.out.print(s + " ");
             myInput = in.nextLine();
-            myNum = myMaths.mathsParseNum(myInput, blnInteger);
+            myNum = myMaths.mathsParseNum(myInput, blnFloat);
             if(myNum == null)
                 System.out.println("That's not a valid number.");
             else
