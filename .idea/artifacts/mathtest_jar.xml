@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="mathtest:jar">
+  <artifact type="jar" build-on-make="true" name="mathtest:jar">
     <output-path>$PROJECT_DIR$/classes/artifacts/mathtest_jar</output-path>
     <root id="archive" name="mathtest.jar">
       <element id="module-output" name="mathtest" />
