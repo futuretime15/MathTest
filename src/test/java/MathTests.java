@@ -6,81 +6,78 @@
     Part-based on 'Introduction to Unit Testing with Java' by Christian Vasquez
 */
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import static org.testng.Assert.assertEquals;
+import org.junit.*;
 
 public final class MathTests {
     private Maths myMaths;
 
-    @BeforeTest
-    public void Setup() {
+    @Before
+    public void setUp() {
         myMaths = new Maths();
     }
 
     @Test
     public void TestNG() {
         String str1 = "TestNG is OK";
-        assertEquals("TestNG is OK", str1);
+        Assert.assertEquals("TestNG is OK", str1);
     }
 
     @Test
     public void parse_IntegerIncInteger() {
-        assertEquals(myMaths.mathsParseNum("1.0", false), 1.0);
+        Assert.assertEquals(myMaths.mathsParseNum("1.0", false), 1.0, 0);
     }
 
     @Test
     public void parse_FloatIncInteger() {
-        assertEquals(myMaths.mathsParseNum("1.0", true), 1.0);
+        Assert.assertEquals(myMaths.mathsParseNum("1.0", true), 1.0, 0);
     }
 
     @Test
     public void parse_FloatIncFloat() {
-        assertEquals(myMaths.mathsParseNum("1.1", true), 1.1);
+        Assert.assertEquals(myMaths.mathsParseNum("1.1", true), 1.1, 0);
     }
 
     @Test
     public void parse_FloatExcInteger() {
-        assertEquals(myMaths.mathsParseNum("1.1", false), null);
+        Assert.assertNull(myMaths.mathsParseNum("1.1", false));
     }
 
     @Test
     public void parse_IntegerExcString() {
-        assertEquals(myMaths.mathsParseNum("X", false), null);
+        Assert.assertNull(myMaths.mathsParseNum("X", false));
     }
 
     @Test
     public void parse_FloatExcString() {
-        assertEquals(myMaths.mathsParseNum("X", true), null);
+        Assert.assertNull(myMaths.mathsParseNum("X", true));
     }
 
     @Test
     public void parse_IntegerExcNull() {
-        assertEquals(myMaths.mathsParseNum(null, false), null);
+        Assert.assertNull(myMaths.mathsParseNum(null, false));
     }
 
     @Test
     public void parse_FloatExcNull() {
-        assertEquals(myMaths.mathsParseNum(null, true), null);
+        Assert.assertNull(myMaths.mathsParseNum(null, true));
     }
 
     @Test
-    public void six_Add() { assertEquals(myMaths.mathsAdd(6.0, 2.0), 8.0); }
+    public void six_Add() { Assert.assertEquals(myMaths.mathsAdd(6.0, 2.0), 8.0, 0); }
 
     @Test
-    public void six_Subtract() { assertEquals(myMaths.mathsSubtract(6.0, 2.0), 4.0); }
+    public void six_Subtract() { Assert.assertEquals(myMaths.mathsSubtract(6.0, 2.0), 4.0, 0); }
 
     @Test
-    public void six_Multiply() { assertEquals(myMaths.mathsMultiply(6.0, 2.0), 12,0); }
+    public void six_Multiply() { Assert.assertEquals(myMaths.mathsMultiply(6.0, 2.0), 12,0); }
 
     @Test
-    public void six_Divide() { assertEquals(myMaths.mathsDivide(6.0, 2.0), 3.0); }
+    public void six_Divide() { Assert.assertEquals(myMaths.mathsDivide(6.0, 2.0), 3.0, 0); }
 
     @Test
-    public void DivideByZero() { assertEquals(myMaths.mathsDivide(6.0, 0.0), null); }
+    public void DivideByZero() { Assert.assertNull(myMaths.mathsDivide(6.0, 0.0)); }
 
-    @AfterTest
+    @After
     public void tearDown() {
         myMaths = null;
     }

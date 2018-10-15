@@ -10,8 +10,9 @@ Unit Testing Exercise
     + For run configuration, for Application, use Main class as: Main
     + For run configuration, for unit testing, Run Test within MathTests as Run 'MathTests'
     + For run configuration, for JAR, $HOME/IdeaProjects/MathTest/classes/artifacts/mathtest_jar/mathtest.jar
-    + Project Structure includes Artifacts of JAR with MANIFEST.MF moved to main/resources/META-INF
+    + Project Structure has Artifacts of JAR with MANIFEST.MF moved to main/resources/META-INF
     + SOLID principles of object-oriented programming
+    + Java Naming conventions from JavaPoint
     + Part-based on 'Introduction to Unit Testing with Java' by Christian Vasquez
-    
+
 */
